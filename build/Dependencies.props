@@ -1,0 +1,28 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!--库版本设置-->
+	<PropertyGroup>
+		<NetstandardVersion>netstandard2.1</NetstandardVersion>
+		<DefaultTargetFramework>net6.0</DefaultTargetFramework>
+		<CommonTargetFrameworks Condition="'$(CommonTargetFrameworks)' == ''">net6.0</CommonTargetFrameworks>
+	</PropertyGroup>
+
+	<!--项目设置-->
+	<PropertyGroup>
+		<!--Nuget相关-->
+		<SrgDescription>IT Asset Management Platform.</SrgDescription>
+		<!--版本号-->
+		<MapleDays>$([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($([System.DateTime]::Now.Ticks), 633979008000000000))).TotalDays.ToString("0000"))</MapleDays>
+		<MapleTimeOfDayTotalHours>$([MSBuild]::Add($([System.DateTime]::Now.TimeOfDay.TotalHours), 1000).ToString("0000"))</MapleTimeOfDayTotalHours>
+		<!--提供隐式引用-->
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<!--控制编译器是否为库生成 XML 文档文件-->
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Product>ITAM</Product>
+		<PackageTags>MAPLE ITAM</PackageTags>
+		<Copyright>Copyright © Fengqinhua</Copyright>
+		<Authors>Fengqinhua</Authors>
+		<Owners>Fengqinhua</Owners>
+	</PropertyGroup>
+	
+</Project>
